@@ -10,6 +10,9 @@
       background-color: #000777;
       color: white;
     }
+    .col_secondary {
+
+    }
     .center_content {
       display: flex;
       justify-content: center;
@@ -22,8 +25,11 @@
     </div>
     <div class="center_content">
       <div class="w3-card" style="padding:15px; margin:20px;">
-        <table class="w3-table" id="link_data_container">
-          <tr><th style="width: 100px;">Variable</th><th>Content</th></tr>
+        <table class="w3-table">
+          <tbody id="link_data_container">
+            <tr style="border-bottom: 1px solid lightgray;"><th style="width: 100px;">Variable</th><th>Content</th></tr>
+
+          </tbody>
         </table>
       </div>
     </div>
@@ -44,7 +50,17 @@
         var new_td1 = document.createElement("td");
         var new_td2 = document.createElement("td");
         new_td1.innerHTML = single_line[0];
-        new_td2.innerHTML = single_line[1];
+        if(single_line[0] == "access_token") {
+          var new_div = document.createElement("div");
+          new_div.style.backgroundColor = "#9DFF73";
+          new_div.style.border: "1px solid gray";
+          new_div.style.borderRadius: "5px";
+          new_div.style.padding: "0px 5px";
+          new_div.innerHTML = single_line[1];
+          new_td2.appendChild(new_div);
+        } else {
+          new_td2.innerHTML = single_line[1];
+        }
         new_tr.appendChild(new_td1);
         new_tr.appendChild(new_td2);
         document.getElementById("link_data_container").appendChild(new_tr);
