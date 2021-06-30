@@ -7,9 +7,10 @@
   <body>
     <div id="link_data_container"></div>
     <script type="text/javascript">
-      var data = window.location.href.split("/");
-      data.shift();
-      data = data.join("/");
+      var data = window.location.search;
+      //var data = window.location.href.split("/");
+      //data.shift().shift().shift();
+      //data = data.join("/");
       if(data.charAt(0) == '#') data = data.slice(1);
       document.getElementById("link_data_container").innerHTML = data;
     </script>
