@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TOV - Twitch Oauth Viewer</title>
+  </head>
+  <body>
+    <div id="link_data_container"></div>
+    <script type="text/javascript">
+      var data = window.location.search;
+      if(data.charAt(0) == '#') data = data.slice(1);
+      document.getElementByID("link_data_container").innerHTML = data;
+    </script>
+  </body>
+</html>
