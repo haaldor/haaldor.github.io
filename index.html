@@ -6,8 +6,17 @@
   </head>
   <body>
     <div id="link_data_container"></div>
+
+
     <script type="text/javascript">
-      var data = decodeURI(window.location.hash.slice(1)).replace("=", ": ").replace("&", "<br>");
+    // my functions
+      String.prototype.replace_all = function(from, to) {
+        return this.toString().split(from).join(to);
+      }
+    </script>
+
+    <script type="text/javascript">
+      var data = decodeURI(window.location.hash.slice(1)).replace_all("=", ": ").replace_all("&", "<br>");
 
       document.getElementById("link_data_container").innerHTML = data;
     </script>
