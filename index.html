@@ -16,7 +16,7 @@
     </script>
 
     <script type="text/javascript">
-      var data = decodeURI(window.location.hash.slice(1)).replace_all("=", ": ").replace_all("&", "<br>");
+      var data = decodeURIComponent(window.location.hash.slice(1)).replace_all("=", ": ").replace_all("&", "<br>");
 
       document.getElementById("link_data_container").innerHTML = data;
     </script>
