@@ -7,7 +7,8 @@
   <body>
     <div id="link_data_container"></div>
     <script type="text/javascript">
-      var data = window.location.hash.slice(1);
+      var data = decodeURI(window.location.hash.slice(1)).replace("=", ": ").replace("&", "\n");
+
       document.getElementById("link_data_container").innerHTML = data;
     </script>
   </body>
