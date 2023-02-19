@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipt Splitter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        Recipt Splitter
+        <button id="save-load-button"></button>
+    </header>
+    <section id="sidebar-l">
+        <h1>Add Members</h1>
+        <template id="template-member">
+            <div>
+                <input placeholder="Member name">
+                <button>-</button>
+            </div>
+        </template>
+        <!-- Here are the created divs -->
+        <button>+</button>
+    </section>
+    <section id="main">
+        <main id="product-list">
+            <template>
+                <div>
+                    <input productname placeholder="Product name">
+                    <select>
+                        <option value="default" selected>Ignore</option>
+                    </select>
+                    <input type="number" step="0.01" placeholder="0.00 zł">
+                    <button>-</button>
+                </div>
+            </template>
+            <!-- Here are the created divs -->
+            <button>+</button>
+        </main>
+        <div id="member-sums-list">
+            <template>
+                <div>
+                    <span>Member name</span>
+                    <span>0 zł</span>
+                </div>
+            </template>
+            <!-- Here are the created divs -->
+        </div>
+        <div>
+            <button id="clear-recipt-button"></button>
+            <button id="download-recipt-button"></button>
+            <label id="upload-recipt-button" for="upload-recipt-input">
+                <input type="file" id="upload-recipt-input" accept=".csv"></input>
+            </label>
+        </div>
+    </section>
+    <section id="sidebar-r">
+        <h1>Add Split</h1>
+        <template id="template-split">
+            <div>
+                <input splitname placeholder="Split name">
+                <button>-</button>
+                <template class="template-single-range">
+                    <div>
+                        <span slidername>Name</span>
+                        <input type="range" min="0" max="100" value="0">
+                        <span>0%</span>
+                    </div>
+                </template>
+                <div class="range-list">
+                    
+                </div>
+            </div>
+        </template>
+        <!-- Here are the created divs -->
+        <button>+</button>
+    </section>
+    <div id="overlay-unnamed-members">Member name is invalid!</div>
+    <div id="overlay-unnamed-splits">Split name is invalid!</div>
+
+    <div class="popup" id="popup-setup-load">
+        <span>Current split setup:</span>
+        <button close class="close-button">X</button>
+        <textarea readonly id="save-textarea"></textarea>
+        <span>Load split setup:</span>
+        <input placeholder="Paste copied split setup here!" id="load-input">
+        <button class="load-button"></button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
